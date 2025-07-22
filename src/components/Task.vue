@@ -1,3 +1,12 @@
+<script>
+export default {
+  name: 'Task',
+  props: {
+    task: Object,
+  },
+};
+</script>
+
 <template>
   <div
     @dblclick="$emit('toggle-reminder', task.id)"
@@ -10,15 +19,6 @@
     <p>{{ task.day }}</p>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'Task',
-  props: {
-    task: Object,
-  },
-};
-</script>
 
 <style scope>
 .fas {

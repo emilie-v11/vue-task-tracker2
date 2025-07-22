@@ -1,21 +1,3 @@
-<template>
-  <div class="container">
-    <Header
-      @toggle-add-task="toggleAddTask"
-      title="Task Tracker"
-      :showAddTask="showAddTask"
-    ></Header>
-    <div v-show="showAddTask">
-      <AddTask @add-task="addTask" />
-    </div>
-    <Tasks
-      @toggle-reminder="toggleReminder"
-      @delete-task="deleteTask"
-      :tasks="tasks"
-    />
-  </div>
-</template>
-
 <script>
 import Header from './components/Header.vue';
 import Tasks from './components/Tasks.vue';
@@ -91,6 +73,24 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="container">
+    <Header
+      @toggle-add-task="toggleAddTask"
+      title="Task Tracker"
+      :showAddTask="showAddTask"
+    ></Header>
+    <div v-show="showAddTask">
+      <AddTask @add-task="addTask" />
+    </div>
+    <Tasks
+      @toggle-reminder="toggleReminder"
+      @delete-task="deleteTask"
+      :tasks="tasks"
+    />
+  </div>
+</template>
 
 <style>
 .container {
